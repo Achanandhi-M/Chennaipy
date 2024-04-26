@@ -1,2 +1,2 @@
 # Chennaipy
-Deploying your Django app on kubenetes
+Deploying your Django app on k8s
