@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My task</title>
+</head>
+<body>
+    <center>
+        <div>
+        <h3>Today's task</h3>
+        </div>
+        <div>
+        <form action="/addTodoItem/" method="post">
+            {% csrf_token %} 
+            <input type="text" name="content" placeholder="My plan" required/>
+            <input type="submit" value="Create" required/><br><br>
+        </form>
+        </div>
+        <div>
+            <ul style="list-style: none;">
+                {% for i in all_items %}
+            <li {% if i.completed %}style="text-decoration:line-through; margin-bottom: 20px;{% endif %}">
+                <hr>
+            {{ i.content}}
+            {% if not i.completed %}
+                (Not Finished)
+            {% endif %}
+            <div style="display: flex; gap:30px; justify-content:center; padding-top:20px;">
+            <form action="/deleteTodoItem/{{i.id}}/" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Delete">
+            </form>
+            <form action="/taskCompletionStatus/{{i.id}}/" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Finished">
+              </form>
+              </div>
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </center>
+   
+</body>
+</html>
