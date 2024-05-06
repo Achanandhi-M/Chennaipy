@@ -1,4 +1,6 @@
 Kubernetes/
 slide/
 .gitignore
-userfulCommands.md
+usefulCommands.md
+README.md
+test

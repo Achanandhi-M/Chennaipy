@@ -1,3 +1,4 @@
 my-todo-env
 .vscode/
 __pycache__/
+Dockerfile

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-app
+  name: django-app-01
 spec:
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: django-app
-        image: achanandhi/chennaipy:v2
+        image: achanandhi/chennaipy:latest
         resources:
           limits:
             memory: "128Mi"

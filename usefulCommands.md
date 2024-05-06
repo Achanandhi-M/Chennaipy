@@ -41,3 +41,9 @@ $ kubectl apply -f <name>
 
 ---
 
+## To view the data 
+
+```bash
+
+$  python manage.py shell
+
